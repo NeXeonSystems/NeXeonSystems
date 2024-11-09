@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeXeonSystems Website Monitor Documentation</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header class="doc-header">
+    <div class="container">
+      <h1>NeXeonSystems Website Monitor</h1>
+      <p>Real-time website monitoring system for administrators</p>
+      <a href="../ourprojects.html" class="btn-back">Back to Projects</a>
+    </div>
+  </header>
+
+  <section class="doc-content">
+    <div class="container">
+      <h2>Description</h2>
+      <p><strong>NeXeonSystems-Website-Monitor</strong> is a real-time website monitoring system designed to keep track of the health and status of websites and services. It checks whether websites are up or down and provides an intuitive interface to display this status in real-time. The tool uses a client-server architecture with WebSockets for live updates, offering a seamless experience for website administrators to monitor their sites efficiently.</p>
+      
+      <h2>Features</h2>
+      <ul>
+        <li><strong>Real-time status updates</strong> for each monitored website</li>
+        <li><strong>Website name, status (up/down), and indicators</strong> with color codes (green for up, red for down)</li>
+        <li><strong>Easy setup and configuration</strong> via a <code>config.json</code> file</li>
+        <li><strong>Mobile-responsive UI</strong> for accessibility across all devices</li>
+        <li><strong>Socket.IO</strong> integration for live updates without page refreshes</li>
+        <li><strong>Monitoring of multiple websites</strong> with a scalable, easy-to-use interface</li>
+      </ul>
+
+      <h2>Tech Stack</h2>
+      <ul>
+        <li><strong>Frontend:</strong>
+          <ul>
+            <li>HTML</li>
+            <li>CSS (Responsive Grid Layout)</li>
+            <li>JavaScript (Socket.IO for real-time updates)</li>
+          </ul>
+        </li>
+        <li><strong>Backend:</strong>
+          <ul>
+            <li>Node.js</li>
+            <li>Express</li>
+          </ul>
+        </li>
+        <li><strong>Real-time Communication:</strong> Socket.IO</li>
+        <li><strong>Web Monitoring:</strong> Axios (for HTTP requests to check the status of websites)</li>
+      </ul>
+
+      <h2>Setup Instructions</h2>
+      
+      <h3>Prerequisites</h3>
+      <p>Before you begin, ensure you have the following installed:</p>
+      <ul>
+        <li><a href="https://nodejs.org" target="_blank">Node.js</a> (version 14 or higher)</li>
+        <li><a href="https://www.npmjs.com/" target="_blank">npm</a></li>
+      </ul>
+
+      <h3>Clone the Repository</h3>
+      <p>Start by cloning the repository to your local machine:</p>
+      <pre><code>git clone https://github.com/NeXeonSystems/NeXeonSystems-Website-Monitor.git
+cd NeXeonSystems-Website-Monitor
+      </code></pre>
+
+      <h3>Install Dependencies</h3>
+      <p>Run the following command to install all required dependencies:</p>
+      <pre><code>npm install</code></pre>
+
+      <h3>Add Sites to Monitor</h3>
+      <p>The monitored sites are configured in the <code>config.json</code> file.</p>
+      <ol>
+        <li>Open <code>config.json</code> in your project folder.</li>
+        <li>It will look like this by default:</li>
+      </ol>
+      <pre><code>{
+  "Sites": [
+    { "name": "", "domain": "", "port":  }
+  ]
+}</code></pre>
+      <ol start="3">
+        <li>Add your own websites by filling in the <code>"name"</code>, <code>"domain"</code>, and <code>"port"</code> fields.</li>
+      </ol>
+      <p>For example:</p>
+      <pre><code>{
+  "Sites": [
+    { "name": "Example", "domain": "example.com", "port": 80 },
+    { "name": "Example2", "domain": "example2.com", "port": 8080 }
+  ]
+}</code></pre>
+      <p>Once you've added your websites, the system will monitor them and display their status on the front-end.</p>
+
+      <h3>Running the Application</h3>
+      <p>Start the application with the following command:</p>
+      <pre><code>npm start</code></pre>
+      <p>This will run the server, and you can access the monitoring dashboard in your browser by navigating to <code>http://localhost:3000</code>.</p>
+
+      <h3>Status Indicators</h3>
+      <p>The status page will show:</p>
+      <ul>
+        <li><strong>Green</strong> (up) if the website is online and accessible.</li>
+        <li><strong>Red</strong> (down) if the website is offline or unreachable.</li>
+      </ul>
+
+      <h2>Example Output</h2>
+      <p>Once everything is set up and the sites are running, your site monitor page will look like this:</p>
+      <img src="https://i.imgur.com/V3C1jb3.png" alt="Example Monitor" style="max-width:100%; height:auto;">
+      <ul>
+        <li>Green circle for sites that are <strong>up</strong>.</li>
+        <li>Red circle for sites that are <strong>down</strong>.</li>
+      </ul>
+
+      <h2>Improvements</h2>
+      <h3>Latest Updates</h3>
+      <ul>
+        <li><strong>v1.0.0</strong> (November 9, 2024): Added real-time status monitor with a nice CSS.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2024 NeXeonSystems & Nethuka. All rights reserved.</p>
+  </footer>
+</body>
+</html>
